@@ -4,11 +4,18 @@
 to configure create .env file
 
 ```
-DBROOT='/folder/nextcloud/db'
+DB_PASSWORD='password'
 NCROOT='/folder/nextcloud/data'
-MPASSWORD='Test'
-MROOTPASSWORD='Test'
-MDNAME=nextcloud
-MUSER=nextcloud
+
 ```
 
+Make executeable
+```
+chmod +x install.sh
+```
+
+Run install
+
+```
+./install.sh
+```
