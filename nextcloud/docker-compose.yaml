@@ -11,14 +11,16 @@ services:
       - MYSQL_PASSWORD=${DB_PASSWORD}
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
-    options:
-      max-size: 50m   
+    logging:
+      options:
+        max-size: 50m
 
   redis:
     image: redis:alpine
     restart: always
-    options:
-      max-size: 50m   
+    logging:
+      options:
+        max-size: 50m
 
   app:
     image: nextcloud
@@ -35,6 +37,6 @@ services:
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
       - MYSQL_HOST=db
-       logging:
-    options:
-      max-size: 50m   
+    logging:
+      options:
+        max-size: 50m   
