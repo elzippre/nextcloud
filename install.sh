@@ -20,10 +20,10 @@ echo "User $APPNAME created and added to group $APPNAME."
 
 # Copy folders and files to new user
 sudo install -D -m 660 -g $APPNAME -o $APPNAME  \
-   -t /home/$APPNAME/$APPNAME/ ./$APPNAME/*
+   -t /data/$APPNAME/$APPNAME/ ./$APPNAME/*
 sudo chown $APPNAME ./$APPNAME/.env
-sudo cp -p ./$APPNAME/.env /home/$APPNAME/$APPNAME/
+sudo cp -p ./$APPNAME/.env /data/$APPNAME/$APPNAME/
 
 # Login as new user and run docker
-sudo -u $APPNAME docker compose -f /home/$APPNAME/$APPNAME/docker-compose.yaml \
-     --env-file /home/$APPNAME/$APPNAME/.env up -d 
+sudo -u $APPNAME docker compose -f /data/$APPNAME/$APPNAME/docker-compose.yaml \
+     --env-file /data/$APPNAME/$APPNAME/.env up -d 
